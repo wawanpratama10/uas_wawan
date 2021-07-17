@@ -1,17 +1,17 @@
 const tf = require('@tensorflow/tfjs-node');
 
-function normalized(data){ // i & r
-    x1 = (data[0] - -1.720494425) / 42.773
-    x2 = (data[1] - 1.349425519) / 29.9412
-    x3 = (data[2] - -0.888496155) / 94.8964
+function normalized(data){ // x1, x2, x3
+    x1 = (data[0] - 42.773) / 10.33017006
+    x2 = (data[1] - 29.9412) / 8.936247191
+    x3 = (data[2] - 94.8964) / 8.887376673
     return [x1, x2, x3]
 }
 
-function denormalized(data){
-    x1 = (data[0] * 42.773) + 10.33017006
-    x2 = (data[1] * 29.9412) + 8.936247191
-    x3 = (data[2] * 94.8964) + 8.887376673
-    return [x1, x2, x3]
+function denormalized(data){ // y1, y2, y3
+    y1 = (data[0] * 16.08197907) + 32.2718
+    y2 = (data[1] * 8.918185118) + 39.959
+    y3 = (data[2] * 11.79955613) + 69.739
+    return [y1, y2, y3]
 }
 
 
@@ -42,4 +42,3 @@ async function predict(data){
 module.exports = {
     predict: predict 
 }
-  
