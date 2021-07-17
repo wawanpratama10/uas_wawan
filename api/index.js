@@ -26,7 +26,7 @@ state = 0;
 bot.onText(/\/predict/, (msg) => { 
     bot.sendMessage(
         msg.chat.id,
-        `input nilai x1|x2|x3 example 4|3|2`
+        `input nilai x1|x2|x3 example 9|6|3`
     );   
     state = 1;
 });
